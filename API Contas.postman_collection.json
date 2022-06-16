@@ -1,0 +1,1446 @@
+{
+	"info": {
+		"_postman_id": "19b59753-dc66-4247-8b9c-f82777003363",
+		"name": "API Contas",
+		"description": "API simples feita em python (flask), que realiza operações CRUD em uma simulação de conta bancária.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21334164"
+	},
+	"item": [
+		{
+			"name": "HOME",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000"
+				},
+				"description": "Home, não é utilizada, logo retorna os endpoints da API."
+			},
+			"response": [
+				{
+					"name": "Retorna endpoints",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.1.2 Python/3.10.4"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Jun 2022 12:21:44 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "110"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resposta\": \"Para acessar a api utilize o endpoint /contas. Para acessar os serviços utilize /servicos\"\n}"
+				}
+			]
+		},
+		{
+			"name": "CONTAS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nomeproprietario",
+							"value": "ana",
+							"description": "(Required) Nome do proprietário da conta",
+							"type": "text"
+						},
+						{
+							"key": "tipo",
+							"value": "p",
+							"description": "(Required) Tipo da conta, c = corrente, p = poupança",
+							"type": "text"
+						},
+						{
+							"key": "saldo",
+							"value": "1000",
+							"description": "(Required) Saldo da conta",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/contas",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"contas"
+					]
+				},
+				"description": "Cria nova conta"
+			},
+			"response": [
+				{
+					"name": "Conta criada",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nomeproprietario",
+									"value": "joao",
+									"description": "(Required) Nome do proprietário da conta",
+									"type": "text"
+								},
+								{
+									"key": "tipo",
+									"value": "c",
+									"description": "(Required) Tipo da conta, c = corrente, p = poupança",
+									"type": "text"
+								},
+								{
+									"key": "saldo",
+									"value": "5000.50",
+									"description": "(Required) Saldo da conta",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/contas",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"contas"
+							]
+						}
+					},
+					"status": "CREATED",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.1.2 Python/3.10.4"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Jun 2022 12:26:15 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resposta\": \"Conta criada com sucesso.\"\n}"
+				},
+				{
+					"name": "Faltando atríbuto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nomeproprietario",
+									"value": "joao",
+									"description": "(Required) Nome do proprietário da conta",
+									"type": "text"
+								},
+								{
+									"key": "tipo",
+									"value": "c",
+									"description": "(Required) Tipo da conta, c = corrente, p = poupança",
+									"type": "text"
+								},
+								{
+									"key": "saldo",
+									"value": "5000.50",
+									"description": "(Required) Saldo da conta",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/contas",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"contas"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.1.2 Python/3.10.4"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Jun 2022 12:35:15 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "98"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resposta\": \"Alguns dos atributos não está presente: nomeproprietario, tipo ou saldo.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "CONTAS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/contas",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"contas"
+					]
+				},
+				"description": "Seleciona todas as contas existentes"
+			},
+			"response": [
+				{
+					"name": "Seleção das contas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/contas",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"contas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.1.2 Python/3.10.4"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Jun 2022 12:36:52 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "56"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resposta\": [\n        [\n            1,\n            \"joao\",\n            \"c\",\n            5000.5\n        ],\n        [\n            2,\n            \"ana\",\n            \"p\",\n            1000\n        ]\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "CONTAS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/contas/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"contas",
+						"1"
+					]
+				},
+				"description": "Seleciona uma conta por código"
+			},
+			"response": [
+				{
+					"name": "Seleção de uma conta",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/contas/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"contas",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.1.2 Python/3.10.4"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Jun 2022 12:37:29 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resposta\": [\n        [\n            1,\n            \"joao\",\n            \"c\",\n            5000.5\n        ]\n    ]\n}"
+				},
+				{
+					"name": "Conta não encontrada",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/contas/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"contas",
+								"3"
+							]
+						}
+					},
+					"status": "NOT FOUND",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.1.2 Python/3.10.4"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Jun 2022 12:37:45 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resposta\": \"Conta não encontrada\"\n}"
+				}
+			]
+		},
+		{
+			"name": "CONTAS",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nomeproprietario",
+							"value": "jerisvaldo",
+							"description": "Nome do proprietário da conta",
+							"type": "text"
+						},
+						{
+							"key": "tipo",
+							"value": "c",
+							"description": "Tipo da conta, c = corrente, p = poupança",
+							"type": "text"
+						},
+						{
+							"key": "saldo",
+							"value": "6000.99",
+							"description": "Saldo da conta",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/contas/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"contas",
+						"1"
+					]
+				},
+				"description": "Atualiza uma conta por código"
+			},
+			"response": [
+				{
+					"name": "Conta atualizada",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nomeproprietario",
+									"value": "jerisvaldo",
+									"description": "Nome do proprietário da conta",
+									"type": "text"
+								},
+								{
+									"key": "tipo",
+									"value": "c",
+									"description": "Tipo da conta, c = corrente, p = poupança",
+									"type": "text"
+								},
+								{
+									"key": "saldo",
+									"value": "6000.99",
+									"description": "Saldo da conta",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/contas/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"contas",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.1.2 Python/3.10.4"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Jun 2022 12:39:01 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "45"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resposta\": \"Conta atualizada com sucesso.\"\n}"
+				},
+				{
+					"name": "Conta não encontrada",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nomeproprietario",
+									"value": "jerisvaldo",
+									"description": "Nome do proprietário da conta",
+									"type": "text"
+								},
+								{
+									"key": "tipo",
+									"value": "c",
+									"description": "Tipo da conta, c = corrente, p = poupança",
+									"type": "text"
+								},
+								{
+									"key": "saldo",
+									"value": "6000.99",
+									"description": "Saldo da conta",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/contas/5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"contas",
+								"5"
+							]
+						}
+					},
+					"status": "NOT FOUND",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.1.2 Python/3.10.4"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Jun 2022 12:39:20 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resposta\": \"Conta não encontrada\"\n}"
+				}
+			]
+		},
+		{
+			"name": "CONTAS",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/contas/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"contas",
+						"2"
+					]
+				},
+				"description": "Deleta uma conta por código"
+			},
+			"response": [
+				{
+					"name": "Conta deletada",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/contas/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"contas",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.1.2 Python/3.10.4"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Jun 2022 12:42:32 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resposta\": \"Conta deletada com sucesso.\"\n}"
+				},
+				{
+					"name": "Conta não encontrada",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/contas/5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"contas",
+								"5"
+							]
+						}
+					},
+					"status": "NOT FOUND",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.1.2 Python/3.10.4"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Jun 2022 12:42:44 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resposta\": \"Conta não encontrada\"\n}"
+				}
+			]
+		},
+		{
+			"name": "SERVICOS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/servicos",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"servicos"
+					]
+				},
+				"description": "Lista os serviços disponíveis"
+			},
+			"response": [
+				{
+					"name": "Retorna serviços",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/servicos",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"servicos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.1.2 Python/3.10.4"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Jun 2022 12:43:06 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "114"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resposta\": \"Esses são os seguintes serviços: /servicos/lesaldo, /servicos/deposita, /servicos/retira\"\n}"
+				}
+			]
+		},
+		{
+			"name": "SERVICOS - LESALDO",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "codigo",
+							"value": "1",
+							"description": "(Required) Código da conta\n",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/servicos/lesaldo",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"servicos",
+						"lesaldo"
+					]
+				},
+				"description": "Mostra o saldo de uma conta específica"
+			},
+			"response": [
+				{
+					"name": "Saldo da conta",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "1",
+									"description": "(Required) Código da conta\n",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/servicos/lesaldo",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"servicos",
+								"lesaldo"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.1.2 Python/3.10.4"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Jun 2022 12:44:01 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "59"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resposta\": \"Saldo da conta de código 1: R$ 6000.99\"\n}"
+				},
+				{
+					"name": "Conta não encontrada",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "3",
+									"description": "(Required) Código da conta\n",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/servicos/lesaldo",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"servicos",
+								"lesaldo"
+							]
+						}
+					},
+					"status": "NOT FOUND",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.1.2 Python/3.10.4"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Jun 2022 12:44:19 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resposta\": \"Conta não encontrada\"\n}"
+				}
+			]
+		},
+		{
+			"name": "SERVICOS - DEPOSITA",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "codigo",
+							"value": "1",
+							"description": "(Required) Código da conta",
+							"type": "text"
+						},
+						{
+							"key": "valor",
+							"value": "550",
+							"description": "(Required) Valor a ser depositado",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/servicos/deposita",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"servicos",
+						"deposita"
+					]
+				},
+				"description": "Deposita um valor em uma conta específica"
+			},
+			"response": [
+				{
+					"name": "Valor depositado",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "1",
+									"description": "(Required) Código da conta",
+									"type": "text"
+								},
+								{
+									"key": "valor",
+									"value": "550",
+									"description": "(Required) Valor a ser depositado",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/servicos/deposita",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"servicos",
+								"deposita"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.1.2 Python/3.10.4"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Jun 2022 12:45:11 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "45"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resposta\": \"Valor depositado com sucesso.\"\n}"
+				},
+				{
+					"name": "Conta não encontrada",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "5",
+									"description": "(Required) Código da conta",
+									"type": "text"
+								},
+								{
+									"key": "valor",
+									"value": "550",
+									"description": "(Required) Valor a ser depositado",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/servicos/deposita",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"servicos",
+								"deposita"
+							]
+						}
+					},
+					"status": "NOT FOUND",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.1.2 Python/3.10.4"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Jun 2022 12:46:26 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resposta\": \"Conta não encontrada\"\n}"
+				}
+			]
+		},
+		{
+			"name": "SERVICOS - RETIRA",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "codigo",
+							"value": "1",
+							"description": "(Required) Código da conta",
+							"type": "text"
+						},
+						{
+							"key": "valor",
+							"value": "500",
+							"description": "(Required) Valor a retirar",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/servicos/retira",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"servicos",
+						"retira"
+					]
+				},
+				"description": "Retira um valor de uma conta específica"
+			},
+			"response": [
+				{
+					"name": "Valor retirado",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "1",
+									"description": "(Required) Código da conta",
+									"type": "text"
+								},
+								{
+									"key": "valor",
+									"value": "500",
+									"description": "(Required) Valor a retirar",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/servicos/retira",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"servicos",
+								"retira"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.1.2 Python/3.10.4"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Jun 2022 12:47:53 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resposta\": \"Valor retirado com sucesso.\"\n}"
+				},
+				{
+					"name": "Conta não encontrada",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "5",
+									"description": "(Required) Código da conta",
+									"type": "text"
+								},
+								{
+									"key": "valor",
+									"value": "500",
+									"description": "(Required) Valor a retirar",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/servicos/retira",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"servicos",
+								"retira"
+							]
+						}
+					},
+					"status": "NOT FOUND",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.1.2 Python/3.10.4"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Jun 2022 12:48:06 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resposta\": \"Conta não encontrada\"\n}"
+				},
+				{
+					"name": "Saldo insuficiente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "1",
+									"description": "(Required) Código da conta",
+									"type": "text"
+								},
+								{
+									"key": "valor",
+									"value": "50000",
+									"description": "(Required) Valor a retirar",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/servicos/retira",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"servicos",
+								"retira"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.1.2 Python/3.10.4"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Jun 2022 12:48:26 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resposta\": \"Saldo insuficiente para retirar\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:5000",
+			"type": "string"
+		}
+	]
+}
